@@ -1,0 +1,136 @@
+.wrapper {
+  height: 96vh;
+  width: 98vw;
+  margin: 2vh 1vw;
+}
+
+.couchControls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.editControls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.flexCentered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loginBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+  height: 210px;
+  margin: 10px;
+  // border: 1px solid;
+}
+.loginStatus {
+  margin-left: 20px;
+  padding-top: 18px;
+  width: 200px;
+}
+
+.dbListBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 210px;
+  margin: 10px;
+  // border: 1px solid;
+}
+.dbListBlock p {
+  text-align: center;
+}
+.dbListBlock mat-selection-list {
+  border: 1px solid;
+  margin-top: 10px;
+  height: 175px;
+  overflow: auto;
+}
+.dbListBlock mat-list-option {
+  height: 36px !important;
+}
+.dbListBlock mat-list-option .mdc-list-item__end {
+  display: none !important;
+}
+
+.dbControlBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 350px;
+  height: 210px;
+  margin: 10px;
+  border: 1px solid;
+}
+.dbControlBlock .dbInfo {
+  margin: 20px 10px 0;
+}
+.dbControlBlock .destroyCurDb {
+  position: absolute;
+  top: 65px;
+  left: 50px;
+  width: 250px;
+  border: 1px solid;
+  background-color: #fff;
+  text-align: center;
+  z-index: 100;
+}
+
+.editBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+  height: 400px;
+  margin: 20px 20px 0;
+  border: 1px solid;
+}
+.editBlock .includeDocsButton {
+  margin: 0 20px;
+}
+.editBlock .currentDocButton {
+  margin: 3px 10px;
+}
+.editBlock .currentDocButton:first-of-type {
+  margin: 3px 10px 3px 20px;
+}
+.editBlock .destroyCurDoc {
+  position: absolute;
+  top: 10px;
+  left: 190px;
+  width: 250px;
+  border: 1px solid;
+  background-color: #fff;
+  text-align: center;
+  z-index: 100;
+}
+
+.resultBlock {
+  margin: 0 20px 0;
+  display: block;
+}
+.resultBlock mat-form-field {
+  width: 600px;
+  height: 420px;
+  // border: 1px solid red;
+}
+.resultBlock textarea {
+  resize: none;
+  height: 370px;
+}
+
+button {
+  margin: 10px 10px;
+}

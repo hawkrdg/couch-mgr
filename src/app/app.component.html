@@ -1,0 +1,137 @@
+<mat-sidenav-container class="wrapper">
+
+  <mat-toolbar color="primary">{{title.toUpperCase()}}</mat-toolbar>
+
+  <div class="couchControls">
+    <div class="loginBlock">
+      <div class="flexCentered">
+        <mat-form-field class="topMargin20" appearance="outline" color="primary">
+          <mat-label>CouchDB Server URL:</mat-label>
+            <input matInput [(ngModel)]="serverURL">
+        </mat-form-field>
+      </div>
+    
+      <div class="flexCentered">
+        <mat-form-field class="" appearance="outline" color="primary">
+          <mat-label>Login:</mat-label>
+          <input matInput [(ngModel)]="currentAdmin">
+        </mat-form-field>
+    
+        <div class="spacer10"></div>
+        
+        <mat-form-field class="" appearance="outline" color="primary">
+          <mat-label>Password:</mat-label>
+            <input matInput type="password" [(ngModel)]="currentPassword">
+        </mat-form-field>
+      </div>
+    
+      <div class="flexCentered">
+        <button mat-raised-button color="accent" (click)="login()">Login</button>
+        <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+        <span class="loginStatus">{{loginStatus}}</span>
+      </div>
+    </div>
+
+    <div class="dbListBlock">
+      <p>Server Databases...</p>
+      <mat-selection-list matTooltip="Choose a database to work with..."  #dbList [multiple]="false" (selectionChange)="onSelectDb($event)">
+        <mat-list-option *ngFor="let db of currentDbList" [value]="db">
+          {{db}}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+  
+    <div class="dbControlBlock">
+      <div class="flexCentered">
+        <mat-form-field appearance="outline" color="primary">
+          <mat-label>Current Database:</mat-label>
+            <input matInput [(ngModel)]="currentDb">
+        </mat-form-field>
+        <button mat-icon-button color="contrast" matTooltip="Refresh current database info..." (click)="refreshDbInfo()">
+          <mat-icon>refresh</mat-icon>
+        </button>
+      </div>
+      
+      <div class="flexCentered dbControls">
+        <button mat-raised-button color="accent" matTooltip="GET _all_docs?include_docs=true..." (click)="getAllDocs()">_all_docs</button>
+        <button mat-raised-button color="accent" matTooltip="Create a new database..." (click)="createDb()">Create</button>
+        <button mat-raised-button color="warn" matTooltip="Destroy this dabatabes..." (click)="showDestroyDb = true">Destroy</button>
+      </div>
+      
+      <div class="flexCentered">
+        <div class="dbInfo">Doc Count: {{currentDocCnt}}</div>
+        <div class="dbInfo">Del Count: {{currentDelCnt}}</div>
+        <button mat-raised-button color="warn" matTooltip="Purge all deleted documents..." (click)="purgeDeleted()">Purge</button>
+      </div>
+
+      <div class="destroyCurDb" *ngIf="showDestroyDb">
+        <h2>ARE YOU SURE...?</h2>
+        <button mat-raised-button color="warn" matTooltip="Create a new database..." (click)="destroyDb()">Destroy</button>
+        <button mat-raised-button color="accent" matTooltip="Destroy this dabatabes..." (click)="showDestroyDb = false">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="editControls">
+    <div class="editBlock">
+      <div class="flexCentered">
+        <mat-form-field class="" appearance="outline" color="primary">
+          <mat-label>Current Document:</mat-label>
+            <input matInput [(ngModel)]="currentEditDoc">
+        </mat-form-field>
+        <button mat-raised-button class="currentDocButton" color="accent" matTooltip="Save the current result window..."
+                    [disabled]="!canEdit" (click)="saveDoc()">Save</button>
+        <button mat-raised-button class="currentDocButton" color="warn" matTooltip="Destroy the current document..."
+                    [disabled]="currentEditDoc === '_security' || !canEdit" (click)="showDestroyDoc = true">Destroy</button>
+      </div>
+
+      <div class="flexCentered">
+        <mat-form-field class="" appearance="outline" color="primary">
+          <mat-label>Current Design Doc Name:</mat-label>
+            <input matInput [(ngModel)]="currentDDName">
+        </mat-form-field>
+      </div>
+
+      <div class="flexCentered">
+        <button mat-raised-button class="topMargin10" color="accent" matTooltip="GET database security document..."
+                    (click)="getSecurityDoc()">Get Security</button>
+        <button mat-raised-button class="topMargin10" color="accent" matTooltip="GET the current design document..."
+                    (click)="getDesignDoc()">Get Design Doc</button>
+      </div>
+
+      <div class="flexCentered">
+        <button mat-raised-button class="topMargin10" color="accent" matTooltip="GET the current by _id..."
+                    (click)="getDataDoc()">Get Data Doc</button>
+      </div>
+
+      <div class="flexCentered">
+        <mat-form-field class="topMargin10" appearance="outline" color="primary">
+          <mat-label>View Name:</mat-label>
+            <input matInput [(ngModel)]="currentViewName">
+        </mat-form-field>
+      </div>
+
+      <div class="flexCentered">
+        <mat-checkbox class="example-margin" [(ngModel)]="includeDocs">
+          Include Docs ?
+        </mat-checkbox>
+        <button mat-raised-button class="includeDocsButton" color="accent" matTooltip="GET the current view with/without documents..."
+                    (click)="getView()">Get View</button>
+      </div>
+
+      <div class="destroyCurDoc" *ngIf="showDestroyDoc">
+        <h2>ARE YOU SURE...?</h2>
+        <button mat-raised-button color="warn" (click)="destroyDoc()">Destroy</button>
+        <button mat-raised-button color="accent" (click)="showDestroyDoc = false">Cancel</button>
+      </div>
+    </div>
+ 
+    <div class="resultBlock">
+      <mat-form-field class="topMargin20" appearance="outline" color="primary">
+        <mat-label>Last Command Result:</mat-label>
+        <textarea matInput [readonly]="!canEdit" [(ngModel)]="currentResult"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+</mat-sidenav-container>

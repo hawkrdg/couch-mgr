@@ -1,0 +1,45 @@
+//-- material design custom themes...
+
+// @use "./app/material/themes/blue-light.scss" as theme;
+// @use "./app/material/themes/bluegrey-light.scss" as theme;
+// @use "./app/material/themes/brick-light.scss" as theme;
+// @use "./app/material/themes/brown-light.scss" as theme;
+// @use "./app/material/themes/cyan-light.scss" as theme;
+// @use "./app/material/themes/green-light.scss" as theme;
+// @use "./app/material/themes/lime-light.scss" as theme;
+@use "./app/material/themes/teal-light.scss" as theme;
+
+@use "./app/material/theme-fonts.scss";
+body {
+	font-family: 'Barlow';
+}
+
+//-- theme scroll bars...
+
+* {
+	scrollbar-color: theme.$color-accent rgba(0, 0, 0, .13);
+	scrollbar-width: normal;
+}
+::-webkit-scrollbar {
+	width: 9px;
+}
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, .2);
+}
+::-webkit-scrollbar-thumb {
+	background-color: theme.$color-accent;
+	border-radius: 4px;
+}
+
+//-- get rid of <input type="number"> spinners...
+  // Chrome, Safari, Edge, Opera...
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+  // Firefox...
+input[type=number] {
+  -moz-appearance: textfield;
+}

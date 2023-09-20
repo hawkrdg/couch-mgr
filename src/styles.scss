@@ -1,0 +1,203 @@
+// @use "./app/material/custom-theme.scss" as theme;
+@use "./theme.scss";
+
+
+* {
+  margin: 0;
+	box-sizing: border-box;
+}
+
+
+//-- global stuff...
+html {
+  margin: 0;
+}
+
+body {
+	overflow: clip;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to bottom right, #ddc 0%, #886 100%);
+	height: 100vh;
+}
+
+.disabledText {
+	opacity: 0.5;
+}
+.upperCase {
+	text-transform: uppercase;
+}
+.centered {
+  text-align: center;
+}
+
+.underConstruction {
+	text-align: center;
+}
+.underConstruction img {
+	background-color: white;
+}
+.underConstruction h1 {
+	margin: 25px 0 40px;
+}
+
+.blur {
+	filter: blur(3px);
+	color: transparent;
+	text-shadow: 0 0 8px #000;
+}
+
+// global stuff...
+
+.topMargin10 {
+	margin-top: 10px;
+}
+.topMargin20 {
+	margin-top: 20px;
+}
+.topMargin40 {
+	margin-top: 40px;
+}
+.vAlignMiddle {
+  vertical-align: middle;
+}
+.spacer10 {
+  display: inline-block;
+  width: 10px;
+}
+.spacer20 {
+  display: inline-block;
+  width: 20px;
+}
+
+// app stuff...
+
+.tempHeading {
+  text-align: center;
+  font-size: 36px;
+  margin: 30px 0;
+}
+.underConstruction {
+  width: 600px;
+  margin-top: 30px;
+  margin-left: calc(50vw - 300px);
+}
+
+.processingSpinner {
+  position: absolute !important;
+  top: calc(48vh - 50px);
+  right: calc(48vw - 50px);
+  z-index: 100;
+}
+
+.centeredToolbarComponent {
+  display: flex;
+  justify-content: center;
+}
+
+.workDiv {
+  display: flex;
+  justify-content: space-around;  
+}
+
+.listDiv {
+  width: 200px;
+  height: calc( 96vh - 170px );
+  // margin: 0 20px;
+  text-align: center;
+}
+.listTitle {
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.dbSelect {
+  width: 200px;
+  max-height: 93%;
+  border: 1px solid black;
+  overflow: auto;
+  text-align: left;
+}
+
+.dataDiv {
+  width: calc(96vw - 260px);
+  height: calc( 96vh - 170px );
+  // padding: 0 20px;
+}
+
+.fieldRow {
+  display: flex;
+}
+
+.fieldDiv {
+  display: flex;
+  flex-direction: column;
+  width: calc(96vw - 220px);
+  padding: 0 20px;
+}
+.fieldDiv .toolbarDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.fieldDiv .fieldRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.centerFields {
+  justify-content: center;
+}
+.txt50 {
+  width: 50px;
+	margin-left: 10px;
+  // margin-right: 10px;
+}
+.txt80 {
+  width: 80px;
+	margin-left: 10px;
+  // margin-right: 10px;
+}
+.txt100 {
+  width: 100px;
+	margin-left: 10px;
+  // margin-right: 10px;
+}
+.txt150 {
+  width: 150px;
+	margin-left: 10px;
+  // margin-right: 10px;
+}
+.txt200 {
+  width: 200px;
+	margin-left: 10px;
+  // margin-right: 10px;
+}
+.txt250 {
+  width: 250px;
+	margin-left: 10px;
+  // margin-right: 10px;
+}
+
+.userNotesFieldRow {
+  height: calc(80% - 200px);
+}
+.userNotes {
+  width: calc(96vw - 360px);
+  height: calc(96vh - 500px);
+  margin-left: 10px;
+}
+.userNotes textarea {
+  resize: none;
+  height: 120px;
+  overflow: auto;
+}
+
+//-- material over-rides...
+//
+.mat-mdc-form-field-flex {
+  height: 44px !important;
+}
+
+.mdc-list-item__end {
+  display: none !important;
+}

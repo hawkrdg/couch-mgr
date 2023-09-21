@@ -51,7 +51,7 @@ Here you can fetch and edit the security doc, fetch, edit, create, and destroy d
 
 ## The Output Window:
 
-The output window displays the results of the last command, the display being just a plain document. All the data is JSON and is, for the most part, editable. Here you can change plain docs, design docs, security. You can also just type in some JSON and create new plain docs and design docs - the JSON and CouchDB data has to be proper though.
+The output window displays the results of the last command, the current display being just a plain document from the mullins-meter-interfaces database. All the data is JSON and is, for the most part, editable. Here you can change plain docs, design docs, security. You can also just type in some JSON and create new plain docs and design docs - the JSON and CouchDB data has to be proper though.
 
 ![Output:](src/assets/couch-mgr-5.png)
 

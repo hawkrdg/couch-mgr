@@ -55,7 +55,7 @@ The output window displays the results of the last command, the current display 
 
 ![Output:](src/assets/couch-mgr-5.png)
 
-This tool has helped me with managing my proxied servers without either travelling on-site or fiddling with the bind-address. I hope this may be userful to other developers. I would appreciate feedback, especially if any issues arise. You can try it out at:
+This tool has helped me with managing my proxied servers without either travelling on-site or fiddling with the bind-address. I hope this may be useful to other developers. I would appreciate feedback, especially if any issues arise. You can try it out at:
 
     https://hawkrdg.com/couch-mgr
 

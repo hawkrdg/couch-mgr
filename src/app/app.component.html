@@ -14,14 +14,14 @@
       <div class="flexCentered">
         <mat-form-field class="" appearance="outline" color="primary">
           <mat-label>Login:</mat-label>
-          <input matInput [(ngModel)]="currentAdmin">
+          <input matInput (keyup.enter)="login()" [(ngModel)]="currentAdmin">
         </mat-form-field>
     
         <div class="spacer10"></div>
         
         <mat-form-field class="" appearance="outline" color="primary">
           <mat-label>Password:</mat-label>
-            <input matInput type="password" [(ngModel)]="currentPassword">
+            <input matInput type="password" (keyup.enter)="login()" [(ngModel)]="currentPassword">
         </mat-form-field>
       </div>
     
